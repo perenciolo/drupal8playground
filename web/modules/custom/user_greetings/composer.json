@@ -1,0 +1,14 @@
+{
+  "name": "drupal/user_greetings",
+  "type": "drupal-module",
+  "description": "User Greetings CIÂ&T hands on module",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/user_greetings",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/user_greetings",
+    "source": "http://cgit.drupalcode.org/user_greetings"
+  },
+  "require": { }
+}

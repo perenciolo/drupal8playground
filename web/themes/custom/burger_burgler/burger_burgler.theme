@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the Bartik theme.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Template\Attribute;
+
+function burger_burgler_preprocess_node(&$variables)
+{
+  $burger_list = array(
+    array('name' => 'Cheeseburger'),
+    array('name' => 'Halumni burger'),
+    array('name' => 'Quinoa burger')
+  );
+  $variables['burgers'] = $burgers_list;
+}
+
+function burger_burgler_preprocess_field(&$variables)
+{
+  $burger_list = array(
+    array('name' => 'Cheeseburger'),
+    array('name' => 'Halumni burger'),
+    array('name' => 'Quinoa burger')
+  );
+  $variables['burgers'] = $burgers_list;
+}

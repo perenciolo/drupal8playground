@@ -1,0 +1,4 @@
+name: my-lando-drupal-custom-theme
+recipe: drupal8
+config:
+  webroot: web

@@ -1,0 +1,28 @@
+#block-endymion-branding {
+  display: flex;
+  align-items: center;
+
+  h1 {
+    width: 50px;
+    max-width: 100%;
+  }
+
+  a {
+    margin-left: 1%;
+  }
+
+  & * {
+    color: white;
+    fill: white;
+    text-decoration: none;
+  }
+
+  .logo {}
+}
+
+.main-header {
+  height: 300px;
+  background: url(../images/hero-1.jpg) no-repeat;
+  background-size: cover;
+  background-position-y: 50%;
+}

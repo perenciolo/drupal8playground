@@ -1,0 +1,7 @@
+user_greetings.content:
+  path: '/welcome/{username}'
+  defaults:
+    _controller: '\Drupal\user_greetings\Controller\WelcomePageController::welcome'
+    _title: 'User Greetings'
+  requirements:
+    _permission: 'access content'

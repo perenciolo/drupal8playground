@@ -1,0 +1,6 @@
+name: Real Burger Burgler Theme
+description: The theme from Burger Burgler restaurants
+core: 8.x
+type: theme
+libraries:
+  - burger/global-styling

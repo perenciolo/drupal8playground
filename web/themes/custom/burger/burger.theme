@@ -1,0 +1,11 @@
+<?php
+
+function burger_preprocess_node(&$variables)
+{
+  $variables['current_user_is_owner'] = false;
+
+  if ($variables['logged_in'] == true && $variables['node']->getOwnerId() == $variables['user']->id()) {
+    $variables['label']['#suffix'] = '- [you\'re the author]';
+    $variables['current_user_is_owner'] = true;
+  }
+}
