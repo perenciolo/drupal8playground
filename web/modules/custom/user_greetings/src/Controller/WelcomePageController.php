@@ -3,6 +3,8 @@
 namespace Drupal\user_greetings\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\user_greetings\Service\WelcomeMessageGenerator;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
@@ -11,8 +13,22 @@ use Symfony\Component\HttpFoundation\Response;
 
 class WelcomePageController extends ControllerBase
 {
-  public function welcome($username)
-  {
-    return new Response('Welcome  '.$username.' to my new Drupal 8 website!');
-  }
+    private $welcomeMessageGenerator;
+
+    public function __construct(WelcomeMessageGenerator $welcomeMessageGenerator)
+    {
+        $this->welcomeMessageGenerator = $welcomeMessageGenerator;
+    }
+
+    public function welcome($username)
+    {
+        $result = $this->welcomeMessageGenerator->getWelcomeMessage($username);
+        return new Response($result);
+    }
+
+    public static function create(ContainerInterface $container)
+    {
+        $welcomeMsgGen =  $container->get('user_greetings.welcome_message_generator');
+        return new static($welcomeMsgGen);
+    }
 }
